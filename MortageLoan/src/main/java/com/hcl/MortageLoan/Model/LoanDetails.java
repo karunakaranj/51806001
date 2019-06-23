@@ -75,10 +75,7 @@ public class LoanDetails {
 		this.approvedManagerId = approvedManagerId;
 		this.mortageLoanCustomer = mortageLoanCustomer;
 	}
-	public LoanDetails() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 	@Override
 	public String toString() {
 		return "LoanDetails [LoanAccountNumber=" + LoanAccountNumber + ", security=" + security + ", address=" + address

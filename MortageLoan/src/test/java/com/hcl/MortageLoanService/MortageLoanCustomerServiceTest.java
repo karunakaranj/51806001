@@ -9,7 +9,7 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.hcl.MortageLoan.Model.MortageLoanCustomer;
+import com.hcl.MortageLoan.Model.LoanDetails;
 import com.hcl.MortageLoan.Repository.LoanDetailsRepository;
 import com.hcl.MortageLoan.Service.LoanDetailsServiceImpl;
 
@@ -28,11 +28,12 @@ public class MortageLoanCustomerServiceTest {
 	@Test
 	public void addEmployee()
 	{
-//		LoanDetails customer = new LoanDetails(56L,"desdfx","dxdfdf","cfdfg",45L,"fcf");
-//		Mockito.when(customerRepo.save(customer)).thenReturn(customer);
-//		//Mockito.when(userProfilesIDao.save(userProfile)).thenReturn(userProfile);
-//		LoanDetails actualVal=customerServiceImpl.addEmployee(customer);
-//		Assert.assertEquals(customer, actualVal);
+		
+		LoanDetails loan = new LoanDetails(56,"Home","Banglore","Pending",45L,1,null);
+		Mockito.when(loanRepo.save(loan)).thenReturn(loan);
+		//Mockito.when(userProfilesIDao.save(userProfile)).thenReturn(userProfile);
+		LoanDetails actualVal=loanServiceImpl.createLoanAccount(loan);
+		Assert.assertEquals(loan, actualVal);
 	}
 
 }
